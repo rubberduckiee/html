@@ -2,43 +2,208 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animated Colorful Website</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Something awesome is coming soon." />
+
+  <style>
+    :root {
+      --text-color: #ffffff;
+      --card-bg: rgba(0, 0, 0, 0.35);
+      --button-bg: rgba(255, 255, 255, 0.2);
+      --button-text: #ffffff;
+    }
+
+    [data-theme="light"] {
+      --text-color: #1a1a1a;
+      --card-bg: rgba(255, 255, 255, 0.75);
+      --button-bg: rgba(0, 0, 0, 0.08);
+      --button-text: #1a1a1a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-color);
+      background-size: 400% 400%;
+      animation: gradientMove 14s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      text-align: center;
+      padding: 2.5rem 2.5rem 3rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+      animation: fadeIn 1.2s ease forwards;
+      max-width: 90%;
+      width: 440px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* IMAGE */
+    .hero-image {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto 1.5rem;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      opacity: 0.85;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .tag {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    /* TOGGLE */
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      background: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      font-size: 1rem;
+    }
+
+    .theme-icon {
+      display: inline-block;
+      transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+
+    .rotate {
+      transform: rotate(180deg) scale(1.2);
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#home" class="scroll-link"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#about" class="scroll-link"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="#services" class="scroll-link"><i class="fas fa-cogs"></i> Services</a></li>
-      <li><a href="#contact" class="scroll-link"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-  </nav>
 
-  <section id="home" class="section-home fade-in">
-    <h1>Welcome to My Animated Website!</h1>
-    <p>Enjoy the smooth colors and fun animations 🌟</p>
-  </section>
+  <button class="theme-toggle" id="themeToggle">
+    <span class="theme-icon" id="themeIcon">🌙</span>
+  </button>
 
-  <section id="about" class="section-about fade-in">
-    <h2>About Me</h2>
-    <p>I love creating colorful, interactive websites with animations!</p>
-  </section>
+  <div class="card">
 
-  <section id="services" class="section-services fade-in">
-    <h2>My Services</h2>
-    <div class="service-icon"><i class="fas fa-laptop-code"></i><p>Web Dev</p></div>
-    <div class="service-icon"><i class="fas fa-paint-brush"></i><p>Design</p></div>
-    <div class="service-icon"><i class="fas fa-mobile-alt"></i><p>Mobile</p></div>
-  </section>
+    <!-- HERO IMAGE -->
+    <div class="hero-image">
+      <img src="images/hero.png" alt="Coming Soon illustration" loading="lazy">
+    </div>
 
-  <section id="contact" class="section-contact fade-in">
-    <h2>Contact</h2>
-    <p>Say hello anytime!</p>
-  </section>
+    <h1>Coming Soon</h1>
+    <p>
+      Something exciting is being built here.<br />
+      Stay tuned — it’ll be worth the wait.
+    </p>
 
-  <script src="script.js"></script>
+    <div class="tag">🚀 Launching soon</div>
+  </div>
+
+  <script>
+    const darkGradients = [
+      "linear-gradient(135deg, #667eea, #764ba2)",
+      "linear-gradient(135deg, #30cfd0, #330867)",
+      "linear-gradient(135deg, #232526, #414345)"
+    ];
+
+    const lightGradients = [
+      "linear-gradient(135deg, #ff9a9e, #fad0c4)",
+      "linear-gradient(135deg, #fbc2eb, #a6c1ee)",
+      "linear-gradient(135deg, #a1c4fd, #c2e9fb)"
+    ];
+
+    const icon = document.getElementById("themeIcon");
+    const savedTheme = localStorage.getItem("theme");
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    function setBackground(theme) {
+      const gradients = theme === "light" ? lightGradients : darkGradients;
+      document.body.style.background =
+        gradients[Math.floor(Math.random() * gradients.length)];
+    }
+
+    function applyTheme(theme, animate = false) {
+      if (theme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        icon.textContent = "🌞";
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        icon.textContent = "🌙";
+      }
+
+      if (animate) {
+        icon.classList.add("rotate");
+        setTimeout(() => icon.classList.remove("rotate"), 500);
+      }
+
+      setBackground(theme);
+    }
+
+    let currentTheme = savedTheme
+      ? savedTheme
+      : prefersLight.matches ? "light" : "dark";
+
+    applyTheme(currentTheme);
+
+    document.getElementById("themeToggle").onclick = () => {
+      currentTheme = currentTheme === "light" ? "dark" : "light";
+      localStorage.setItem("theme", currentTheme);
+      applyTheme(currentTheme, true);
+    };
+  </script>
+
 </body>
 </html>
