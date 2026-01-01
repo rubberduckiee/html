@@ -1,57 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Website with Icons</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Linking FontAwesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Colorful Website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation bar -->
-    <nav>
-        <ul>
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-            <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="#home" class="scroll-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about" class="scroll-link"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#services" class="scroll-link"><i class="fas fa-cogs"></i> Services</a></li>
+      <li><a href="#contact" class="scroll-link"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Home section -->
-    <section id="home" class="section-home">
-        <h1>Welcome to My Colorful Website!</h1>
-        <p>This is a playful and colorful page with clickable icons.</p>
-    </section>
+  <section id="home" class="section-home fade-in">
+    <h1>Welcome to My Animated Website!</h1>
+    <p>Enjoy the smooth colors and fun animations 🌟</p>
+  </section>
 
-    <!-- About section -->
-    <section id="about" class="section-about">
-        <h2>About Me</h2>
-        <p>I am a web developer learning how to create fun and engaging websites.</p>
-    </section>
+  <section id="about" class="section-about fade-in">
+    <h2>About Me</h2>
+    <p>I love creating colorful, interactive websites with animations!</p>
+  </section>
 
-    <!-- Services section -->
-    <section id="services" class="section-services">
-        <h2>Services</h2>
-        <div class="service-icon">
-            <i class="fas fa-laptop-code"></i>
-            <p>Web Development</p>
-        </div>
-        <div class="service-icon">
-            <i class="fas fa-paint-brush"></i>
-            <p>UI/UX Design</p>
-        </div>
-        <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-            <p>Mobile Development</p>
-        </div>
-    </section>
+  <section id="services" class="section-services fade-in">
+    <h2>My Services</h2>
+    <div class="service-icon"><i class="fas fa-laptop-code"></i><p>Web Dev</p></div>
+    <div class="service-icon"><i class="fas fa-paint-brush"></i><p>Design</p></div>
+    <div class="service-icon"><i class="fas fa-mobile-alt"></i><p>Mobile</p></div>
+  </section>
 
-    <!-- Contact section -->
-    <section id="contact" class="section-contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me via email or social media.</p>
-    </section>
+  <section id="contact" class="section-contact fade-in">
+    <h2>Contact</h2>
+    <p>Say hello anytime!</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
