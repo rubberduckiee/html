@@ -1,0 +1,97 @@
+/* Basic reset for margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: #ff6f61;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Section styles */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-home {
+    background-color: #6a5acd;
+    color: white;
+}
+
+.section-about {
+    background-color: #ff7f50;
+    color: white;
+}
+
+.section-services {
+    background-color: #98fb98;
+}
+
+.section-contact {
+    background-color: #ffeb3b;
+}
+
+/* Icon styles in services section */
+.service-icon {
+    display: inline-block;
+    margin: 20px;
+    font-size: 40px;
+    color: #ff6f61;
+}
+
+.service-icon p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.service-icon:hover {
+    color: #ffd700;
+    cursor: pointer;
+}
+
+/* Add hover effect to icons in navigation */
+nav ul li a i {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover i {
+    transform: scale(1.2);
+}
