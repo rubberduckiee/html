@@ -1,97 +1,117 @@
-/* Basic reset for margins and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Body settings */
+/* Animated gradient background */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: linear-gradient(120deg, #ff6f61, #ffcc00, #6a5acd);
+  background-size: 300% 300%;
+  animation: gradientFlow 10s ease infinite;
+  overflow-x: hidden;
 }
 
-/* Navigation bar styles */
+/* Navigation */
 nav {
-    background-color: #ff6f61;
-    padding: 15px;
+  background: rgba(255,255,255,0.8);
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  border-radius: 5px;
+  z-index: 1000;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-nav ul li {
-    display: inline;
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+nav a:hover {
+  color: #6a5acd;
 }
 
-nav ul li a:hover {
-    color: #ffd700;
+nav a i {
+  transition: transform 0.3s;
 }
 
-/* Section styles */
+nav a:hover i {
+  transform: rotate(15deg);
+}
+
+/* Sections */
 section {
-    padding: 40px 20px;
-    text-align: center;
+  padding: 70px 20px;
+  text-align: center;
+  min-height: 60vh;
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+  transform: translateY(60px);
+  border-radius: 12px;
+  margin: 30px;
 }
 
-.section-home {
-    background-color: #6a5acd;
-    color: white;
-}
+/* Colors per section */
+.section-home { background: rgba(106, 92, 205, 0.8); color: white; }
+.section-about { background: rgba(255, 127, 80, 0.8); color: white; }
+.section-services { background: rgba(152, 251, 152, 0.8); }
+.section-contact { background: rgba(255, 235, 59, 0.8); }
 
-.section-about {
-    background-color: #ff7f50;
-    color: white;
-}
-
-.section-services {
-    background-color: #98fb98;
-}
-
-.section-contact {
-    background-color: #ffeb3b;
-}
-
-/* Icon styles in services section */
+/* Icons */
 .service-icon {
-    display: inline-block;
-    margin: 20px;
-    font-size: 40px;
-    color: #ff6f61;
+  display: inline-block;
+  margin: 25px;
+  font-size: 50px;
+  color: #ff6f61;
+  transition: transform 0.4s ease, color 0.4s ease;
 }
 
 .service-icon p {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
+  font-size: 16px;
+  margin-top: 8px;
+  color: #333;
 }
 
 .service-icon:hover {
-    color: #ffd700;
-    cursor: pointer;
+  color: #ffd700;
+  transform: scale(1.2) rotate(10deg);
 }
 
-/* Add hover effect to icons in navigation */
-nav ul li a i {
-    font-size: 22px;
-    transition: transform 0.3s ease;
+/* Visible class for scroll animation */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-nav ul li a:hover i {
-    transform: scale(1.2);
+/* Keyframes */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-in class default state */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
